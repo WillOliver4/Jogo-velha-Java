@@ -1,6 +1,12 @@
 package jogador;
 
+import modelo.Marca;
+
 public interface Jogador
 {
-    // faça
+    public Marca getMarca();
+
+    public void facaSuaJogada() throws Exception;
+
+    public String toString();
 }
