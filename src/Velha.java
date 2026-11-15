@@ -1,4 +1,6 @@
 import jogador.*;
+import modelo.Marca;
+import modelo.Tabuleiro;
 import java.io.*;
 
 public class Velha

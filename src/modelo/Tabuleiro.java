@@ -1,3 +1,5 @@
+package modelo;
+
 public class Tabuleiro implements Cloneable
 {
     // a principio, toda igual a null

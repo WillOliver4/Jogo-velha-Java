@@ -1,6 +1,8 @@
 ﻿package jogador;
 
 import java.io.*;
+import modelo.Marca;
+import modelo.Tabuleiro;
 
 public class JogadorHumano implements Jogador
 {

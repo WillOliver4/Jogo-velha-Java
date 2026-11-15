@@ -1,5 +1,9 @@
 package jogador;
 
+
+import modelo.Marca;
+import modelo.Tabuleiro;
+
 public class JogadorAutomatico implements Jogador
 {
     private Marca     marca     = null;

@@ -1,3 +1,5 @@
+package modelo;
+
 public class Marca
 {
     private char simbolo;

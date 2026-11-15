@@ -1,3 +1,6 @@
+import modelo.Marca;
+import modelo.Tabuleiro;
+
 public class AnalistaSituacional
 {
     private Tabuleiro tabDoJogo;
