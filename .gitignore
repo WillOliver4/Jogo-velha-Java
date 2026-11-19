@@ -1,0 +1,23 @@
+# Arquivos compilados Java
+*.class
+bin/
+build/
+target/
+
+# Arquivos de log e temporários
+*.log
+*.tmp
+
+# Configurações de IDEs e editores
+.vscode/*
+!.vscode/settings.json
+.idea/
+*.iml
+.project
+.classpath
+.settings/
+
+# Arquivos do sistema operacional
+Thumbs.db
+[Dd]esktop.ini
+.DS_Store

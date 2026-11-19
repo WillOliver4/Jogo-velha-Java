@@ -16,12 +16,19 @@ public class Velha
         AnalistaSituacional analista;
 
         boolean jogadorHumanoComeca = (int)(Math.random()*2) == 0;
+        boolean continuar;
+
+        System.out.println("JOGO DA VELHA");
 
         do
         {
             try
             {
                 tabDoJogo = new Tabuleiro ();
+                if (jogadorHumanoComeca)
+                    System.out.println("Voce comeca esta partida.");
+                else
+                    System.out.println("O computador comeca esta partida.");
 
                 if (jogadorHumanoComeca)
                 {
@@ -45,9 +52,15 @@ public class Velha
                 else
                     jogador=jogadorA;
 
+                System.out.println("Sua marca: " + jogadorH.getMarca());
+                System.out.println("Marca do computador: " + jogadorA.getMarca());
+                System.out.println(tabDoJogo);
+
                 do
                 {
+                    System.out.println(jogador);
                     jogador.facaSuaJogada();
+                    System.out.println(tabDoJogo);
 
                     if (jogador==jogadorH)
                         jogador=jogadorA;
@@ -56,19 +69,33 @@ public class Velha
                 }
                 while (!analista.fimDeJogo());
 
-                if (analista.getMarcaDoVencedor().equals(jogadorH.getMarca()))
+                Marca vencedor = analista.getMarcaDoVencedor();
+                if (vencedor == null)
+                    jogadorH.deuVelha ();
+                else if (vencedor.equals(jogadorH.getMarca()))
                     jogadorH.vcGanhou ();
                 else
-                    if (analista.getMarcaDoVencedor().equals(jogadorA.getMarca()))
+                    if (vencedor.equals(jogadorA.getMarca()))
                         jogadorH.vcPerdeu ();
                     else
                         jogadorH.deuVelha ();
 
                 jogadorHumanoComeca = !jogadorHumanoComeca;
+                continuar = jogadorH.querMaisUmaPartida();
+            }
+            catch (EOFException e)
+            {
+                System.out.println("Entrada encerrada.");
+                return;
             }
             catch (Exception e)
-            {}
+            {
+                System.out.println("Erro: " + e.getMessage());
+                return;
+            }
         }
-        while (jogadorH.querMaisUmaPartida());
+        while (continuar);
+
+        System.out.println("Obrigado por jogar!");
     }
 }
