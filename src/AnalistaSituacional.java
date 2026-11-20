@@ -1,6 +1,8 @@
 import modelo.Marca;
 import modelo.Tabuleiro;
 
+// o analista situacional serve para analisar o estado do jogo, verificando se há um vencedor, se o tabuleiro está cheio e se o jogo acabou
+
 public class AnalistaSituacional
 {
     private Tabuleiro tabDoJogo;
@@ -8,6 +10,7 @@ public class AnalistaSituacional
     public AnalistaSituacional (Tabuleiro tab) throws Exception
     {
         // colocar tab em tabDoJogo
+        // tab é um nome para o tabuleiro do jogo, que é passado como parametro para o analista situacional, para que ele possa analisar o estado do jogo
         if (tab == null)
             throw new Exception("O tabuleiro nao pode ser nulo.");
 
@@ -46,6 +49,8 @@ public class AnalistaSituacional
 
     private Marca verificarSequencia (int lin, int col, int passoLin, int passoCol) throws Exception
     {
+        //serve para verificar a marca do vencedor, verificando se há uma sequencia de 3 marcas iguais em uma linha, coluna ou diagonal
+        // lin e col são as coordenadas da primeira posição da sequencia, passoLin e passoCol são os passos que devem ser dados para percorrer a sequencia, ou seja, se
         Marca primeira = tabDoJogo.getMarcaNaPosicao(lin, col);
         if (primeira == null)
             return null;

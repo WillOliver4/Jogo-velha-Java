@@ -1,5 +1,7 @@
 package modelo;
 
+// em marca.java nós vamos trabalhar os valores que representam X e O, pra colocar no jogo
+// e precisamos trabalhar com manipualçao de dados como o tostring, equals e hashcode, para que possamos comparar as marcas e colocar no tabuleiro
 public class Marca
 {
     private char simbolo;

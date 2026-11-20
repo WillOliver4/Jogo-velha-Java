@@ -109,6 +109,9 @@ public class Tabuleiro implements Cloneable
         for (int lin = 0; lin < 3; lin++)
             for (int col = 0; col < 3; col++)
             {
+                // 31 ou 11 ou qualquer numero primo é o numero para multiplicar o hashcode, para gerar um hashcode unico para cada tabuleiro diferente
+                //o hashcode serve para organizar os itens dentro da hashtable, para que possamos comparar os tabuleiros e ver se eles são iguais ou diferentes
+                // a hashtable é uma estrutura de dados que armazena os itens em uma tabela, onde cada item tem um hashcode unico, e o hashcode é gerado a partir do conteúdo do item, nesse caso, o tabuleiro
                 resultado = 31 * resultado;
                 if (matriz[lin][col] != null)
                     resultado += matriz[lin][col].hashCode();
@@ -132,6 +135,8 @@ public class Tabuleiro implements Cloneable
 
     @Override
     public Object clone ()
+    // o clone serve para criar uma copia do objeto, nesse caso, do tabuleiro, para que possamos comparar os tabuleiros e ver se eles são iguais ou diferentes
+    
     {
         // faça
         try

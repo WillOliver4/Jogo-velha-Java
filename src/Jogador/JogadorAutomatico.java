@@ -4,6 +4,9 @@ package jogador;
 import modelo.Marca;
 import modelo.Tabuleiro;
 
+// aqui estou implementando modelo.marca e tabuleiro porque o jogador automatico precisa saber qual a sua marca e o estado do tabuleiro para poder jogar sozinho
+// nesse sentido, é necessario implantar tanto na interface 
+
 public class JogadorAutomatico implements Jogador
 {
     private Marca     marca     = null;

@@ -33,7 +33,7 @@ public class JogadorHumano implements Jogador
                 System.out.println("Digite X ou O.");
         }
     }
-
+// aqui eu tenho um construtor
     public JogadorHumano (Tabuleiro tab, Marca mrc) throws Exception
     {
         // atribuir tab para tabDoJogo
@@ -71,6 +71,7 @@ public class JogadorHumano implements Jogador
                 if (lin < 1 || lin > 3 || col < 1 || col > 3)
                     throw new Exception("Linha e coluna devem estar entre 1 e 3.");
 
+                // eu tenho o lin -1 pq esse -1 é para ajustar o valor digitado pelo jogador, que é de 1 a 3, para o índice do array, que é de 0 a 2
                 tabDoJogo.setMarcaNaPosicao(marca, lin - 1, col - 1);
                 return;
             }
